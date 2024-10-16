@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
-const URI = "mongodb+srv://username:password@cluster0.bvgyb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-console.log('hello')
+const username = process.env.USERNAME
+const password = process.env.PASSWORD
+const URI = `mongodb+srv://${username}:${password}@cluster0.bvgyb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
 const connectDB = () => {
 	return mongoose.connect(URI, {
 	// useNewUrlParser: true,
